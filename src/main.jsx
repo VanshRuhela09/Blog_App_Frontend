@@ -4,6 +4,9 @@ import "./index.css";
 import App from "./App.jsx";
 import { BrowserRouter } from "react-router-dom";
 import StoreContextProvider from "./context/StoreContext.jsx";
+
+export const server = "https://blog-app-server-eq8o.onrender.com";
+
 createRoot(document.getElementById("root")).render(
   <BrowserRouter>
     <StoreContextProvider>

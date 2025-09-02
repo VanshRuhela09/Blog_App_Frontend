@@ -2,6 +2,7 @@ import { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import axios from "axios";
 import { toast } from "react-toastify";
+import { server } from "../main";
 const Signup = () => {
   const [formData, setFormData] = useState({
     name: "",
@@ -28,7 +29,7 @@ const Signup = () => {
       data.append("image", formData.image);
       setLoading(true);
       const res = await axios.post(
-        "http://localhost:4000/user/register",
+        `${server}/user/register`,
         data,
         {
           headers: {

@@ -1,4 +1,5 @@
 import { createContext, useEffect, useState } from "react";
+import {server} from '../main'
 import axios from "axios";
 export const StoreContext = createContext(null);
 const StoreContextProvider = ({ children }) => {
@@ -14,7 +15,7 @@ const StoreContextProvider = ({ children }) => {
   useEffect(() => {
     const allBolgs = async () => {
       try {
-        const res = await axios.get("http://localhost:4000/blog/all");
+        const res = await axios.get(`${server}/blog/all`);
 
         setBlogData(res.data.blogs);
       } catch (error) {
